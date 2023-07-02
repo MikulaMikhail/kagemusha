@@ -2,12 +2,14 @@
 
 set -xe
 
-DIR="debug"
+BUILD="release"
 
-if [ ! -d "$DIR" ]; then
-  mkdir "$DIR"
+if [ ! -d "$BUILD" ]; then
+  mkdir "$BUILD"
 fi
 
-clang -Wall -Wextra -o "$DIR"/main main.c
+clang -Wall -Wextra -o ./"$BUILD"/twice twice.c
+clang -Wall -Wextra -o ./"$BUILD"/gates gates.c -lm
+clang -Wall -Wextra -o ./"$BUILD"/xor xor.c -lm
 
-./"$DIR"/main
+#./"$BUILD"/twice

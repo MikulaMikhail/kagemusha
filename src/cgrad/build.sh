@@ -12,4 +12,8 @@ clang -Wall -Wextra -o ./"$BUILD"/twice twice.c
 clang -Wall -Wextra -o ./"$BUILD"/gates gates.c -lm
 clang -Wall -Wextra -o ./"$BUILD"/xor xor.c -lm
 
+pdflatex grad.tex
+mv grad.pdf ./"$BUILD"
+rm grad.log grad.aux
+
 #./"$BUILD"/twice
